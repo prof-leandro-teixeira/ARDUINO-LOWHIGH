@@ -1,0 +1,21 @@
+// Este programa vai acender e apagar 5 leds, sendo um por vez.
+
+int vetorled[]={8,9,10,11,12};  //vetor de leds usando as portas digitais 8, 9, 10, 11 e 12.
+int i;                          //variável utilizada para contagem
+
+void setup() {
+ for (i=0;i<5;i++) {            //for para contar 4 incrementos na variável i
+  pinMode (vetorled[i],OUTPUT); //Modo do pino definido como saída
+ }
+}
+
+void loop() {
+  for (i=0;i<5;i++) {
+    digitalWrite (vetorled[i],LOW); //Desliga led
+    delay (100);                    //Delay 100
+    digitalWrite (vetorled[i],HIGH);//Liga led
+    delay (200);
+    digitalWrite (vetorled[i],LOW);
+    delay (100);
+  }
+}
